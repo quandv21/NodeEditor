@@ -1,0 +1,62 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:c="clr-namespace:NodeEditor.Controls">
+    <Style TargetType="{x:Type c:NodeEditorControlContainer}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type c:NodeEditorControlContainer}">
+                    <Border
+                        Background="{DynamicResource BackgroundBrush}"
+                        BorderBrush="{DynamicResource BorderBrush}"
+                        BorderThickness="1"
+                        Focusable="False">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="50" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <ScrollViewer
+                                x:Name="EditorViewScroll"
+                                Grid.Row="1"
+                                Focusable="False"
+                                HorizontalScrollBarVisibility="Auto"
+                                IsHitTestVisible="True"
+                                VerticalScrollBarVisibility="Auto">
+                                <c:NodeEditorViewControl
+                                    Arrows="{Binding Arrows, RelativeSource={RelativeSource AncestorType={x:Type c:NodeEditorControlContainer}}}"
+                                    Connections="{Binding Connections, RelativeSource={RelativeSource AncestorType={x:Type c:NodeEditorControlContainer}}}"
+                                    CurrentMouseX="{Binding CurrentMouseX, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type c:NodeEditorControlContainer}}}"
+                                    CurrentMouseY="{Binding CurrentMouseY, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type c:NodeEditorControlContainer}}}"
+                                    Nodes="{Binding Nodes, RelativeSource={RelativeSource AncestorType={x:Type c:NodeEditorControlContainer}}}"
+                                    ScrollViewer="{Binding ElementName=EditorViewScroll}" />
+                            </ScrollViewer>
+                            <c:MiniMapControl
+                                Grid.Row="1"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Bottom"
+                                ScrollViewer="{Binding ElementName=EditorViewScroll}" />
+                            <Border
+                                Height="50"
+                                VerticalAlignment="Top"
+                                Background="{DynamicResource RegionBrush}"
+                                BorderBrush="{DynamicResource BorderBrush}"
+                                BorderThickness="0,1,0,0">
+                                <TextBlock
+                                    Margin="10"
+                                    VerticalAlignment="Center"
+                                    FontSize="{StaticResource PrimaryFontSize}"
+                                    Foreground="{DynamicResource TextBrush}">
+                                    <Run Text="X:" />
+                                    <Run Text="{Binding CurrentMouseX, RelativeSource={RelativeSource AncestorType={x:Type c:NodeEditorControlContainer}}}" />
+                                    <Run Text="- Y:" />
+                                    <Run Text="{Binding CurrentMouseY, RelativeSource={RelativeSource AncestorType={x:Type c:NodeEditorControlContainer}}}" />
+                                </TextBlock>
+                            </Border>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

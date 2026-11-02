@@ -1,0 +1,10 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <s:Double x:Key="TilteFontSize">16</s:Double>
+    <s:Double x:Key="PrimaryFontSize">14</s:Double>
+    <s:Double x:Key="SecondaryFontSize">12</s:Double>
+    <CornerRadius x:Key="DefaultCornerRadius">5</CornerRadius>
+    <Thickness x:Key="BorderThickness">1</Thickness>
+</ResourceDictionary>

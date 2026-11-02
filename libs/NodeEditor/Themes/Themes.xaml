@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="NodeControl.xaml" />
+        <ResourceDictionary Source="NodeEditorViewControl.xaml" />
+        <ResourceDictionary Source="ConnectionPointControl.xaml" />
+        <ResourceDictionary Source="MiniMapControl.xaml" />
+        <ResourceDictionary Source="NodeEditorControlContainer.xaml" />
+        <ResourceDictionary Source="WidgetControl.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>
